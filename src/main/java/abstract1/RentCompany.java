@@ -2,6 +2,7 @@ package abstract1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public abstract class RentCompany {
     private final List<Car> cars = new ArrayList<>();
@@ -16,6 +17,10 @@ public abstract class RentCompany {
     }
 
     public String generateReport() {
-        return "";
+        StringBuilder res = new StringBuilder();
+        for (Car car : cars) {
+            res.append(car.getName()).append(" : ").append((int) car.getChargeQuantity()).append("리터\n");
+        }
+        return res.toString();
     }
 }
