@@ -23,6 +23,14 @@ public class Coordinate {
         return y;
     }
 
+    public boolean isTwoCoordinateParellel(Coordinate second) {
+        return this.getY().equals(second.getY());
+    }
+
+    public boolean isTwoCoordinateVertical(Coordinate second) {
+        return this.getX().equals(second.getX());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
